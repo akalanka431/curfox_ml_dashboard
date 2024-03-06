@@ -7,18 +7,22 @@ on:
       - completed
 
 jobs:
-
-  build:
-
+  deploy:
     runs-on: self-hosted
 
     steps:
     - name: Pull Docker image
       run: sudo docker pull akalankaparallax123/dockercicd:latest
-    - name: Delete Old docker container
+
+    - name: Delete Old Docker Container
       run: sudo docker rm -f curfox_ml || true
+
     - name: Run Docker Container
+<<<<<<< HEAD
       run: sudo docker run -d -p 7860:7860 --name curfox_ml akalankaparallax123/dockercicd
 
 
 #fixed
+=======
+      run: sudo docker run -d -p 7860:7860 --name curfox_ml akalankaparallax123/dockercicd:latest
+>>>>>>> 7f9b60a807512a3ccdb943b3bb2dfa7eccfd7fc9
